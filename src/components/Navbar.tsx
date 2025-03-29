@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Car, Menu, X, Phone, Shield, Award } from "lucide-react";
+import { Car, Menu, X, Phone, Shield, Award, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
