@@ -1,12 +1,14 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 160 84% 98%;
-    --foreground: 176 100% 10%;
+    --background: 160 25% 98%;
+    --foreground: 176 35% 15%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -14,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 176 40% 40%;
+    --primary: 176 75% 30%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 176 20% 90%;
+    --secondary: 176 20% 95%;
     --secondary-foreground: 176 50% 20%;
 
     --muted: 176 15% 90%;
@@ -37,19 +39,19 @@
   }
 
   .dark {
-    --background: 176 50% 10%;
+    --background: 176 30% 10%;
     --foreground: 210 40% 98%;
 
-    --card: 176 40% 12%;
+    --card: 176 25% 12%;
     --card-foreground: 210 40% 98%;
 
     --popover: 176 40% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 176 40% 40%;
+    --primary: 176 60% 40%;
     --primary-foreground: 176 10% 10%;
 
-    --secondary: 176 30% 20%;
+    --secondary: 176 20% 20%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 176 30% 20%;
@@ -73,33 +75,61 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold;
   }
 }
 
 @layer components {
   .hero-gradient {
-    @apply bg-gradient-to-r from-rodbez-700 via-rodbez-600 to-rodbez-500;
+    @apply bg-gradient-to-r from-rodbez-800 via-rodbez-700 to-rodbez-600 bg-[length:200%_100%] animate-pan-background;
   }
   
   .section-padding {
-    @apply py-16 px-4 md:py-24 md:px-6 lg:px-8;
+    @apply py-20 px-4 md:py-28 md:px-6 lg:px-8;
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-center mb-12;
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-center mb-12 relative;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute w-16 h-1 bg-rodbez-500 bottom-[-0.75rem] left-1/2 transform -translate-x-1/2 rounded-full;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
+    @apply transition-all duration-300 hover:shadow-premium-hover hover:-translate-y-2 shadow-premium;
+  }
+  
+  .glass-card {
+    @apply bg-white/90 backdrop-blur-sm border border-white/20 rounded-xl shadow-premium;
   }
   
   .button-primary {
-    @apply bg-rodbez-600 hover:bg-rodbez-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300;
+    @apply bg-gradient-to-r from-rodbez-700 to-rodbez-600 hover:from-rodbez-800 hover:to-rodbez-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg;
   }
   
   .button-secondary {
-    @apply bg-white hover:bg-gray-100 text-rodbez-700 font-semibold py-3 px-6 rounded-lg border border-rodbez-600 transition-colors duration-300;
+    @apply bg-white hover:bg-gray-100 text-rodbez-700 font-semibold py-3 px-6 rounded-lg border border-rodbez-600 transition-colors duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .button-gold {
+    @apply bg-premium-gold text-premium-black font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg;
+  }
+  
+  .premium-text {
+    @apply bg-clip-text text-transparent bg-premium-gold;
+  }
+  
+  .shimmer {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:w-full before:animate-shimmer before:bg-shimmer-gradient;
+  }
+  
+  .icon-container {
+    @apply h-16 w-16 rounded-full flex items-center justify-center mb-4 transition-transform transform hover:scale-110 duration-300;
   }
 }

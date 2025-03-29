@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Car, Menu, X } from "lucide-react";
+import { Car, Menu, X, Phone, Shield, Award } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
@@ -29,19 +29,29 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        isScrolled 
+          ? "bg-white/90 backdrop-blur-md shadow-md py-2" 
+          : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div className="flex items-center">
-          <div className="relative h-10 w-10 mr-2 overflow-hidden">
-            <div className={`absolute inset-0 flex items-center justify-center ${isScrolled ? "" : "animate-rotate-logo"}`}>
-              <Car size={30} className={`text-rodbez-600 transform ${isScrolled ? "" : "animate-bounce-small"}`} />
+          <div className={`relative h-12 w-12 mr-2 overflow-hidden ${
+            isScrolled ? "bg-rodbez-50 rounded-lg" : ""
+          }`}>
+            <div className={`absolute inset-0 flex items-center justify-center ${isScrolled ? "" : "animate-float"}`}>
+              <Car size={32} className={`${isScrolled ? "text-rodbez-700" : "text-white"} drop-shadow-md`} />
             </div>
+            {!isScrolled && (
+              <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-50 rounded-full"></div>
+            )}
           </div>
-          <span className={`font-bold text-2xl ${isScrolled ? "text-rodbez-700" : "text-white"}`}>
-            RodBez
-          </span>
+          <div>
+            <span className={`font-display text-2xl font-bold ${isScrolled ? "text-rodbez-800" : "text-white"}`}>
+              RodBez
+            </span>
+            <div className={`text-xs ${isScrolled ? "text-rodbez-600" : "text-white/80"} -mt-1`}>Premium Taxi Service</div>
+          </div>
         </div>
 
         {isMobile ? (
@@ -54,45 +64,96 @@ const Navbar = () => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </Button>
         ) : (
-          <nav className="flex items-center space-x-6">
-            <ul className="flex space-x-8">
+          <div className="flex items-center space-x-6">
+            <nav className="flex items-center">
+              <ul className="flex space-x-8">
+                {["Home", "Services", "How It Works", "Pricing", "About Us", "FAQ"].map((item) => (
+                  <li key={item}>
+                    <a 
+                      href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} 
+                      className={`font-medium hover:text-rodbez-400 transition-colors relative after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-rodbez-400 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
+                        isScrolled ? "text-gray-700" : "text-white"
+                      }`}
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            
+            <div className="flex items-center space-x-3">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className={`rounded-full ${
+                  isScrolled 
+                    ? "border-rodbez-600 text-rodbez-600 hover:bg-rodbez-50" 
+                    : "border-white text-white hover:bg-white/20"
+                }`}
+              >
+                <Phone size={16} className="mr-2" /> 
+                Contact
+              </Button>
+              
+              <Button 
+                className={`group ${
+                  isScrolled 
+                    ? "bg-rodbez-700 hover:bg-rodbez-800" 
+                    : "bg-white text-rodbez-700 hover:bg-white/90"
+                }`}
+              >
+                Book a Ride
+                <div className={`ml-2 h-5 w-5 rounded-full ${
+                  isScrolled 
+                    ? "bg-rodbez-600 group-hover:bg-rodbez-700" 
+                    : "bg-rodbez-100 group-hover:bg-rodbez-200"
+                } flex items-center justify-center transition-colors`}>
+                  <Car size={12} className={isScrolled ? "text-white" : "text-rodbez-700"} />
+                </div>
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Mobile menu with premium styling */}
+      {isMobile && isMenuOpen && (
+        <div className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg animate-slide-in-right border-t border-gray-100">
+          <div className="py-4">
+            <ul className="space-y-1">
               {["Home", "Services", "How It Works", "Pricing", "About Us", "FAQ"].map((item) => (
-                <li key={item}>
+                <li key={item} className="border-b border-gray-100 last:border-0">
                   <a 
                     href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} 
-                    className={`font-medium hover:text-rodbez-500 transition-colors ${
-                      isScrolled ? "text-gray-700" : "text-white"
-                    }`}
+                    className="flex items-center justify-between px-6 py-3 font-medium text-rodbez-800 hover:bg-rodbez-50 transition-colors"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    {item}
+                    <span>{item}</span>
+                    <ChevronRight size={16} className="text-rodbez-400" />
                   </a>
                 </li>
               ))}
             </ul>
-            <Button className="bg-rodbez-600 hover:bg-rodbez-700">Book a Ride</Button>
-          </nav>
-        )}
-      </div>
-
-      {/* Mobile menu */}
-      {isMobile && isMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-white shadow-lg animate-slide-in-right">
-          <ul className="py-4">
-            {["Home", "Services", "How It Works", "Pricing", "About Us", "FAQ"].map((item) => (
-              <li key={item} className="px-4 py-3 border-b border-gray-100">
-                <a 
-                  href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} 
-                  className="block font-medium text-gray-700 hover:text-rodbez-500 transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
-            <li className="px-4 py-4">
-              <Button className="w-full bg-rodbez-600 hover:bg-rodbez-700">Book a Ride</Button>
-            </li>
-          </ul>
+            
+            <div className="px-4 py-4 space-y-2">
+              <Button variant="outline" className="w-full border-rodbez-600 text-rodbez-700 justify-between">
+                <span className="flex items-center">
+                  <Phone size={16} className="mr-2" />
+                  Contact Us
+                </span>
+                <Shield size={16} />
+              </Button>
+              
+              <Button className="w-full bg-rodbez-700 hover:bg-rodbez-800 justify-between">
+                <span className="flex items-center">
+                  <Car size={16} className="mr-2" />
+                  Book a Ride
+                </span>
+                <Award size={16} />
+              </Button>
+            </div>
+          </div>
         </div>
       )}
     </header>
