@@ -60,6 +60,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 For any inquiries, feel free to reach out:
-- **GitHub**: [your-username](https://github.com/vinay2003)
+- **GitHub**: [vinay2003](https://github.com/vinay2003)
 - **Email**: vinaysharma31681@gmail.com
 
