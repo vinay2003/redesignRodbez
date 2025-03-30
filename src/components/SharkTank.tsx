@@ -1,9 +1,9 @@
-
 import React, { useEffect, useRef } from "react";
 import { Award, TrendingUp, Users } from "lucide-react";
+import Video from '@/asset/video/Rodbez.mp4';
 
 const SharkTank = () => {
-  const contentRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -83,18 +83,15 @@ const SharkTank = () => {
           </div>
           
           <div className="aspect-video rounded-xl overflow-hidden shadow-2xl border border-gray-700">
-            <div className="relative pb-[56.25%] h-0">
-              <div className="absolute inset-0 bg-gray-800 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-12 w-12 mx-auto mb-4 text-rodbez-500">
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <polygon points="10 8 16 12 10 16 10 8"></polygon>
-                  </svg>
-                  <p className="text-lg font-medium text-gray-300">Shark Tank India Episode</p>
-                  <p className="text-sm text-gray-500">Click to watch our pitch</p>
-                </div>
-              </div>
-            </div>
+            <iframe
+              width="100%"
+              height="100%"
+              src={Video}
+              title="Shark Tank India Episode"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
         

@@ -111,48 +111,6 @@ const PricingBenefits = () => {
           </div>
         </div>
         
-        <h3 className="text-2xl font-bold text-center mb-12">Customer Testimonials</h3>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
-              className="bg-white p-6 rounded-xl shadow-md opacity-0"
-              ref={el => cardRefs.current[index] = el}
-              style={{ animationDelay: `${index * 0.2}s`, animationFillMode: "forwards" }}
-            >
-              <div className="flex items-center mb-4">
-                <div className="h-12 w-12 rounded-full bg-rodbez-600 text-white flex items-center justify-center font-bold text-lg mr-4">
-                  {testimonial.avatar}
-                </div>
-                <div>
-                  <h4 className="font-semibold">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.location}</p>
-                </div>
-              </div>
-              
-              <div className="flex mb-3">
-                {[...Array(5)].map((_, i) => (
-                  <Star 
-                    key={i} 
-                    className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'}`} 
-                  />
-                ))}
-              </div>
-              
-              <p className="text-gray-700">{testimonial.comment}</p>
-              
-              <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
-                <span className="text-sm text-gray-500">Verified User</span>
-                <button className="text-rodbez-600 hover:text-rodbez-700 flex items-center text-sm">
-                  <MessageSquare className="h-4 w-4 mr-1" />
-                  Reply
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-        
         <div className="mt-20 bg-rodbez-50 p-8 rounded-2xl border border-rodbez-100">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>

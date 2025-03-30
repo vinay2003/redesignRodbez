@@ -7,7 +7,9 @@ import HowItWorks from "@/components/HowItWorks";
 import SharkTank from "@/components/SharkTank";
 import PricingBenefits from "@/components/PricingBenefits";
 import AboutUs from "@/components/AboutUs";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import Testimonial from "@/components/Testimonial";
 
 const Index = () => {
   useEffect(() => {
@@ -24,6 +26,8 @@ const Index = () => {
       <SharkTank />
       <PricingBenefits />
       <AboutUs />
+      <Testimonial />
+      <ContactSection />
       <Footer />
     </div>
   );

@@ -1,6 +1,10 @@
 
 import React, { useEffect, useRef } from "react";
 import { MapPin } from "lucide-react";
+import founder from "@/asset/image/founder.jpg"
+import office from "@/asset/image/office.jpg";
+import founder3 from "@/asset/image/founder3.jpg";
+import team from "@/asset/image/team.jpg";
 
 const AboutUs = () => {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -78,26 +82,26 @@ const AboutUs = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="rounded-lg overflow-hidden h-48 bg-gray-200">
-                  <div className="h-full w-full bg-gradient-to-r from-rodbez-500 to-rodbez-600 flex items-center justify-center text-white font-bold">
-                    Founder Image 1
+                  <div className="h-80 w-full bg-gradient-to-r from-rodbez-500 to-rodbez-600 flex items-center justify-center text-white font-bold">
+                    <img src={founder} alt="" />
                   </div>
                 </div>
                 <div className="rounded-lg overflow-hidden h-32 bg-gray-200">
                   <div className="h-full w-full bg-gradient-to-r from-rodbez-600 to-rodbez-700 flex items-center justify-center text-white font-bold">
-                    Team Image
+                    <img src={team} alt="" />
                   </div>
                 </div>
               </div>
               
               <div className="space-y-4">
                 <div className="rounded-lg overflow-hidden h-32 bg-gray-200">
-                  <div className="h-full w-full bg-gradient-to-r from-rodbez-700 to-rodbez-800 flex items-center justify-center text-white font-bold">
-                    Office Image
+                  <div className="h-100 w-full bg-gradient-to-r from-rodbez-700 to-rodbez-800 flex items-center justify-center text-white font-bold">
+                    <img src={office} alt="" />
                   </div>
                 </div>
                 <div className="rounded-lg overflow-hidden h-48 bg-gray-200">
                   <div className="h-full w-full bg-gradient-to-r from-rodbez-600 to-rodbez-700 flex items-center justify-center text-white font-bold">
-                    Founder Image 2
+                    <img src={founder3} alt="" />
                   </div>
                 </div>
               </div>

@@ -9,6 +9,23 @@ export default {
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
 	],
+	fontFamily: {
+        sans: [
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Noto Sans",
+          "Liberation Sans",
+          "Arial",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Emoji",
+          "Segoe UI Symbol",
+          "Noto Color Emoji",
+        ],
+      },
 	prefix: "",
 	theme: {
 		container: {
@@ -54,17 +71,17 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				rodbez: {
-					50: '#effef9',
-					100: '#d7fcee',
-					200: '#b2f6dd',
-					300: '#79ebcb',
-					400: '#3fd8b1',
-					500: '#1abe97',
-					600: '#0f9b7b',
-					700: '#0c7d65',
-					800: '#0d6353',
-					900: '#0e5246',
-				},
+					50: '#fffde7',
+					100: '#fff9c4',
+					200: '#fff59d',
+					300: '#fff176',
+					400: '#ffee58',
+					500: '#ffeb3b',
+					600: '#fdd835',
+					700: '#fbc02d',
+					800: '#f9a825',
+					900: '#f57f17',
+				  },
 				auburn: {
 					50: '#fef2f2',
 					100: '#ffe1e1',
@@ -174,5 +191,4 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
 } satisfies Config;

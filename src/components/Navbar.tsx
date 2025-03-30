@@ -54,28 +54,18 @@ const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-white/90 backdrop-blur-md shadow-md py-2" 
+          ? "bg-transparent backdrop-blur-md shadow-md py-2" 
           : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo Section */}
         <div className="flex items-center">
-          <div className={`relative h-10 w-10 md:h-12 md:w-12 mr-2 overflow-hidden ${
-            isScrolled ? "bg-rodbez-50 rounded-lg" : ""
-          }`}>
-            <div className={`absolute inset-0 flex items-center justify-center ${isScrolled ? "" : "animate-float"}`}>
-              <Car size={isMobile ? 24 : 32} className={`${isScrolled ? "text-rodbez-700" : "text-white"} drop-shadow-md`} />
-            </div>
-            {!isScrolled && (
-              <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent opacity-50 rounded-full"></div>
-            )}
-          </div>
           <div>
-            <span className={`font-display text-xl md:text-2xl font-bold ${isScrolled ? "text-rodbez-800" : "text-white"}`}>
-              RodBez
+            <span className={`font-sans text-xl md:text-2xl font-bold ${isScrolled ? "text-gray-400" : "text-white"}`}>
+              Rod<span className={`text-xl md:text-2xl font-bold ${isScrolled ? "text-[#f2a90c]" : "text-white"}`}>B</span>
+              ez
             </span>
-            <div className={`text-xs ${isScrolled ? "text-rodbez-600" : "text-white/80"} -mt-1 hidden sm:block`}>Premium Taxi Service</div>
           </div>
         </div>
 
@@ -106,7 +96,7 @@ const Navbar = () => {
                 className={`rounded-full ${
                   isScrolled 
                     ? "border-rodbez-600 text-rodbez-600 hover:bg-rodbez-50" 
-                    : "border-white text-white hover:bg-white/20"
+                    : "border-white text-gray-600 hover:bg-white/20"
                 }`}
               >
                 <Phone size={16} className="mr-2" /> 
