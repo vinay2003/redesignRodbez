@@ -1,69 +1,65 @@
-# Welcome to your Lovable project
+# Project Name
 
-## Project info
+## Overview
+A modern web application built using **ReactJS**, **Tailwind CSS**, and **GSAP** for smooth animations. This project leverages TypeScript (`.tsx`) to enhance code quality and maintainability.
 
-**URL**: https://lovable.dev/projects/05c76014-53bd-4e43-8415-0cd938e7b0b1
+## Features
+- **ReactJS**: Component-based architecture for reusable UI elements.
+- **Tailwind CSS**: Utility-first CSS framework for rapid styling.
+- **GSAP Motion**: High-performance animations for a dynamic user experience.
+- **TypeScript**: Strongly typed JavaScript for improved code quality.
 
-## How can I edit this code?
+## Installation
 
-There are several ways of editing your application.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/vinay2003/redesignRodbez.git
+   cd your-repo
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-**Use Lovable**
+## Usage
+- Modify components inside the `src/components` directory.
+- Adjust Tailwind styles in `src/index.css` or within component classes.
+- Customize animations using GSAP in the relevant `.tsx` files.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/05c76014-53bd-4e43-8415-0cd938e7b0b1) and start prompting.
+## Scripts
+- `npm run dev` – Starts the development server.
+- `npm run build` – Builds the project for production.
+- `npm run start` – Runs the production build.
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Folder Structure
+```
+├── src
+│   ├── components   # Reusable React components
+│   ├── pages        # Page components
+│   ├── assets       # Images, icons, etc.
+│   ├── styles       # Global styles (Tailwind)
+│   ├── App.tsx      # Main app component
+│   ├── main.tsx     # Entry point
+│
+├── public           # Static files
+├── package.json     # Dependencies and scripts
+├── tailwind.config.js  # Tailwind CSS configuration
+├── tsconfig.json    # TypeScript configuration
+└── README.md        # Project documentation
 ```
 
-**Edit a file directly in GitHub**
+## Contributing
+Feel free to fork this repository and submit pull requests with improvements or bug fixes.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## License
+This project is licensed under the [MIT License](LICENSE).
 
-**Use GitHub Codespaces**
+## Contact
+For any inquiries, feel free to reach out:
+- **GitHub**: [your-username](https://github.com/vinay2003)
+- **Email**: vinaysharma31681@gmail.com
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/05c76014-53bd-4e43-8415-0cd938e7b0b1) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
